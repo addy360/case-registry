@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import ClientIssues, CaseType
+
+admin.site.register(ClientIssues)
+admin.site.register(CaseType)

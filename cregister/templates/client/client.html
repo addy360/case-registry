@@ -42,11 +42,13 @@
                     <div class="input-field col s12">
                       <select>
                         <option value="" disabled selected>Options</option>
-                        <option value="1">Consultation & Advice</option>
-                        <option value="2">Legal Drafting</option>
-                        <option value="3">Case Representation</option>
-                        <option value="3">Atestation</option>
-                        <option value="3">Legal Visit</option>
+                         {% if issues %}
+                            {% for issue in issues %}
+                              <option value="{{ issue.id }}">{{ issue.name }}</option>
+                            {% endfor %}
+                          {%  else  %}
+                            <option disabled >No Issues yet</option>
+                          {% endif %}
                       </select>
                       <label>Customer Issue</label>
                      </div>

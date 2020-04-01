@@ -36,11 +36,14 @@
                       <div class="input-field col s12">
                         <select>
                           <option value="" disabled selected>Type</option>
-                          <option value="1">Labour Cases</option>
-                          <option value="1">Criminal Cases</option>
-                          <option value="1">Land Cases</option>
-                          <option value="1">Matrimonial Cases</option>
-                          <option value="1">Police Cases</option>
+                          {% if caseTypes %}
+                            {% for ctype in caseTypes %}
+                              <option value="{{ ctype.id }}">{{ ctype.name }}</option>
+                            {% endfor %}
+                          {%  else  %}
+                            <option disabled >No cases types yet</option>
+                          {% endif %}
+                          
                         </select>
                         <label>Case Type</label>
                        </div>
