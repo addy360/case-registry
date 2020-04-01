@@ -1,0 +1,58 @@
+body{
+	background: url(../img/background.png) no-repeat center center/cover;
+	min-height: 100vh;
+	position: relative;
+}
+
+.overlay{
+	position: absolute;
+	background-color: rgba(255,171,64,.3);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+/*	overflow-y: hidden;
+*/}
+nav{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: transparent !important;
+	z-index: 5
+}
+
+section#showcase{
+	padding-top: 70px;
+	position: relative;
+	z-index: 2;
+}
+
+#showcase .container div.row{
+	margin-bottom: 0
+}
+.collection{
+	max-height: 500px;
+	overflow-y: scroll;
+}
+
+.collection a.collection-item{
+	color: #333;
+	background-color: rgba(255,255,255,.85);
+}
+
+.card-panel{
+	background: rgba(25,14,0,.9);
+	color: #fff
+}
+
+section#showcase form .btn-block{
+	display: block;
+	width: 90%;
+	margin: auto;
+	background-color: rgb(241,135,0)
+}
+
+.fixed-action-btn.toolbar>a{
+	background-color: rgba(64,36,0,.89) !important
+}
