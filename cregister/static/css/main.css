@@ -36,6 +36,16 @@ section#showcase{
 	overflow-y: scroll;
 }
 
+div#list .collection {
+	max-height: 245px !important;
+	background-color: rgba(255,255,255,.85);
+	overflow-y: scroll;
+}
+#list-collection{
+	/*margin-top: 64px;*/
+	max-height: 500px;
+}
+
 .collection a.collection-item{
 	color: #333;
 	background-color: rgba(255,255,255,.85);
@@ -46,9 +56,9 @@ section#showcase{
 	color: #fff
 }
 
-section#showcase form .btn-block{
+.btn-block{
 	display: block;
-	width: 90%;
+	width: 100%;
 	margin: auto;
 	background-color: rgb(241,135,0)
 }

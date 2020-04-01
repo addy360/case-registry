@@ -6,7 +6,7 @@
 
 {% block content %}
       <div class="row">
-        <div class="col m7">
+        <div class="col m8">
           <h4 class="white-text center"><i class="fas fa-balance-scale-left"></i> Registered Cases</h4>
           <div class="collection">
             <a href="#!" class="collection-item">
@@ -96,10 +96,47 @@
             
           </div>
         </div>
-        <div class="col offset-m1 m4">
-          <div id="side" class="card-panel">
-            hi
+        <div class="col  m4">
+          <div id="list-collection">
+            <div class="row">
+              <div class="col m6">
+                <a href="#typeModal" class="btn btn-block btn-small modal-trigger "><i class="fas fa-plus-circle"></i> Type</a>
+              </div>
+              <div class="col m6">
+                <a href="#issueModal" class="btn btn-block btn-small modal-trigger "><i class="fas fa-plus-circle"></i> Issue</a>
+              </div>
+            </div>
+            <div id="list">
+              <ul  class="collection with-header">
+                <li class="collection-header">
+                  {% if caseTypes %}
+                    <h5> Available Case types</h5>
+                    {% for ctype in caseTypes %}
+                      <li class="collection-item">{{ ctype.name }}</li>
+                    {% endfor %}
+                  {% else %}
+                    <h5> No Available case category at the moment</h5>          
+                  {% endif %}
+                </li>
+              </ul>            
+            </div>
+            <div id="list">
+              <ul  class="collection with-header">
+                <li class="collection-header">
+                  {% if issues %}
+                    <h5> Issues</h5>
+                    {% for issue in issues %}
+                      <li class="collection-item">{{ issue.name }}</li>
+                    {% endfor %}
+                  {% else %}
+                    <h5> No Available case category at the moment</h5>          
+                  {% endif %}
+                </li>
+              </ul>            
+            </div>
           </div>
+
         </div>
       </div>
+
 {% endblock content %}

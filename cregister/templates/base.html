@@ -28,6 +28,7 @@
 
 <!-- FAB -->
   {% include 'partials/fab.html' %}
+  {% include 'partials/modals.html' %}
 
 
   <!--Import jQuery before materialize.js-->
@@ -36,6 +37,7 @@
   <script>
     $(document).ready(function () {
       $('select').material_select() 
+      $('.modal').modal();
       
     });
   </script>
