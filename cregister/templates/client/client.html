@@ -5,5 +5,60 @@
 {% endblock title %}
 
 {% block content %}
-    <h1>Client</h1>
+          <div class="row">
+        <h4 class="white-text center"><i class="fas fa-balance-scale-left"></i> Registered Cases</h4>
+        <div class="col m8 offset-m2">
+          <div class="card-panel z-depth-3">
+            <h5 class="center">Client Registration Form</h5>
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s4">
+                      <input id="first_name" type="text" class="validate">
+                      <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <input id="last_name" type="text" class="validate">
+                      <label for="last_name">Middle Name</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <input id="last_name" type="text" class="validate">
+                      <label for="last_name">Last Name</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="Case" type="text" class="validate">
+                      <label for="Case">Case No.</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="phone" type="text" class="validate">
+                      <label for="phone">Phone No.</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <select>
+                        <option value="" disabled selected>Options</option>
+                        <option value="1">Consultation & Advice</option>
+                        <option value="2">Legal Drafting</option>
+                        <option value="3">Case Representation</option>
+                        <option value="3">Atestation</option>
+                        <option value="3">Legal Visit</option>
+                      </select>
+                      <label>Customer Issue</label>
+                     </div>
+                  </div>
+
+                  <div class="input-field">
+                    <input type="submit" value="Register" class="btn btn-block">
+                  </div>
+                  
+                </form>
+              </div>
+          </div>
+        </div>
+      </div>
 {% endblock content %}

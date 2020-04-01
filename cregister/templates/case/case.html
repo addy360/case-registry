@@ -5,5 +5,65 @@
 {% endblock title %}
 
 {% block content %}
-    <h1>case</h1>
+          <div class="row">
+        <h4 class="white-text center"><i class="fas fa-balance-scale-left"></i> Registered Cases</h4>
+        <div class="col m8 offset-m2">
+          <div class="card-panel z-depth-3">
+            <h5 class="center">Client Registration Form</h5>
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s4">
+                      <select>
+                        <option value="" disabled selected>Clients</option>
+                        <option value="1">Jane Doe</option>
+                        <option value="1">John Doe</option>
+                        <option value="1">Halima Musa</option>
+                        <option value="1">Johari Yakobo</option>
+                        <option value="1">Juma Mwinuka</option>
+                      </select>
+                      <label>Choose available client</label>
+                     </div>
+                  <div class="col s4">
+                    <p class="lead center">Versus</p>
+                  </div>
+                    <div class="input-field col s4">
+                      <input id="first_name" type="text" class="validate">
+                      <label for="first_name">Full Name</label>
+                    </div>
+                  </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <select>
+                          <option value="" disabled selected>Type</option>
+                          <option value="1">Labour Cases</option>
+                          <option value="1">Criminal Cases</option>
+                          <option value="1">Land Cases</option>
+                          <option value="1">Matrimonial Cases</option>
+                          <option value="1">Police Cases</option>
+                        </select>
+                        <label>Case Type</label>
+                       </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col s12">
+                      <input id="last_name" type="text" class="validate">
+                      <label for="last_name">Magistrate / Judge</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="advocate" type="text" class="validate">
+                      <label for="Case">Case Advocate</label>
+                    </div>
+                  </div>
+                  <div class="input-field">
+                    <input type="submit" value="Save" class="btn btn-block">
+                  </div>
+                  
+                </form>
+              </div>
+          </div>
+        </div>
+      </div>
 {% endblock content %}
