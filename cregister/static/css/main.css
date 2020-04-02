@@ -66,3 +66,23 @@ div#list .collection {
 .fixed-action-btn.toolbar>a{
 	background-color: rgba(64,36,0,.89) !important
 }
+
+.alert {
+  padding: 0.7rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+  border-radius: 3px;
+  background: #ccc;
+  color: #333;
+}
+
+.alert-error {
+  background: rgb(255,137,137);
+  border: rgb(179,0,0) solid 1px;
+  color: rgb(179,0,0);
+}
+.alert-success {
+  background: rgb(204,255,125);
+  border: rgb(64,106,0) solid 1px;
+  color: rgb(64,106,0);
+}

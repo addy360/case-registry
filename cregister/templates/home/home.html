@@ -112,7 +112,7 @@
                   {% if caseTypes %}
                     <h5> Available Case types</h5>
                     {% for ctype in caseTypes %}
-                      <li class="collection-item">{{ ctype.name }}</li>
+                      <li class="collection-item">{{ ctype.name }}<i class="far fa-trash-alt red-text right"></i></li>
                     {% endfor %}
                   {% else %}
                     <h5> No Available case category at the moment</h5>          
@@ -126,7 +126,7 @@
                   {% if issues %}
                     <h5> Issues</h5>
                     {% for issue in issues %}
-                      <li class="collection-item">{{ issue.name }}</li>
+                      <li class="collection-item">{{ issue.name }}<i class="far fa-trash-alt red-text right"></i></li>
                     {% endfor %}
                   {% else %}
                     <h5> No Available case category at the moment</h5>          

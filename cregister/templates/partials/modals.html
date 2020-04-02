@@ -2,15 +2,16 @@
       <div id="issueModal" class="modal">
         <div class="modal-content">
           <h4 class="center">Add Issue</h4>
-           <form class="col s12">
+           <form method="post" action="{% url 'issue' %}" class="col s12">
+              {% csrf_token %}
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="Case" type="text" class="validate">
+                  <input id="Case" name="issueType" type="text" class="validate">
                   <label for="Case">Issue name</label>
                 </div>
               </div>
               <div class="input-field">
-                <input type="submit" value="Save" class="btn btn-block modal-close waves-effect waves-green btn-flat">
+                <button type="submit"  class="btn btn-block modal-close waves-effect waves-green btn-flat">Save</button>
               </div>
             </form>
         </div>
@@ -19,15 +20,16 @@
       <div id="typeModal" class="modal">
         <div class="modal-content">
           <h4 class="center">Add Case category</h4>
-           <form class="col s12">
+           <form method="post" action="{% url 'caseType' %}" class="col s12">
+              {% csrf_token %}
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="Case" type="text" class="validate">
+                  <input id="Case" type="text" name="caseType" class="validate">
                   <label for="Case">Case category</label>
                 </div>
               </div>
               <div class="input-field">
-                <input type="submit" value="Save" class="btn btn-block modal-close waves-effect waves-green btn-flat">
+                <button type="submit"  class="btn btn-block modal-close waves-effect waves-green btn-flat">Save</button>
               </div>
             </form>
         </div>
