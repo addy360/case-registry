@@ -5,42 +5,43 @@
 {% endblock title %}
 
 {% block content %}
-          <div class="row">
+      <div class="row">
         <h4 class="white-text center"><i class="fas fa-balance-scale-left"></i> Registered Cases</h4>
         <div class="col m8 offset-m2">
           <div class="card-panel z-depth-3">
             <h5 class="center">Client Registration Form</h5>
               <div class="row">
-                <form class="col s12">
+                <form class="col s12" action="{% url 'client' %}" method="POST">
+                  {% csrf_token %}
                   <div class="row">
                     <div class="input-field col s4">
-                      <input id="first_name" type="text" class="validate">
-                      <label for="first_name">First Name</label>
+                      <input id="first_name" type="text" name="fname" class="validate">
+                      <label >First Name</label>
                     </div>
                     <div class="input-field col s4">
-                      <input id="last_name" type="text" class="validate">
-                      <label for="last_name">Middle Name</label>
+                      <input id="last_name" type="text" name="mname" class="validate">
+                      <label >Middle Name</label>
                     </div>
                     <div class="input-field col s4">
-                      <input id="last_name" type="text" class="validate">
-                      <label for="last_name">Last Name</label>
+                      <input id="last_name" type="text" name="lname" class="validate">
+                      <label >Last Name</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="Case" type="text" class="validate">
+                      <input id="Case" type="text" name="caseNo" class="validate">
                       <label for="Case">Case No.</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="phone" type="text" class="validate">
+                      <input id="phone" type="text" name="phone" class="validate">
                       <label for="phone">Phone No.</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <select>
+                      <select name="issueId">
                         <option value="" disabled selected>Options</option>
                          {% if issues %}
                             {% for issue in issues %}

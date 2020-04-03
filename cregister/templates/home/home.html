@@ -5,94 +5,23 @@
 {% endblock title %}
 
 {% block content %}
+{% load humanize %}
       <div class="row">
         <div class="col m8">
           <h4 class="white-text center"><i class="fas fa-balance-scale-left"></i> Registered Cases</h4>
           <div class="collection">
-            <a href="#!" class="collection-item">
-              <h6>John D. Doe <strong>( Case representation )</strong></h6> 
-              <p>
-                <i class="material-icons left">phone</i> 07555555 <span class="right">
-                <i class="material-icons ">schedule</i> 10 mins ago</span>
-              </p>
-            </a>
-            <a href="#!" class="collection-item">
-              <h6>John D. Doe <strong>( Case representation )</strong></h6> 
-              <p>
-                <i class="material-icons left">phone</i> 07555555 <span class="right">
-                <i class="material-icons ">schedule</i> 10 mins ago</span>
-              </p>
-            </a>
-            <a href="#!" class="collection-item">
-              <h6>John D. Doe <strong>( Case representation )</strong></h6> 
-              <p>
-                <i class="material-icons left">phone</i> 07555555 <span class="right">
-                <i class="material-icons ">schedule</i> 10 mins ago</span>
-              </p>
-            </a>
-            <a href="#!" class="collection-item">
-              <h6>John D. Doe <strong>( Case representation )</strong></h6> 
-              <p>
-                <i class="material-icons left">phone</i> 07555555 <span class="right">
-                <i class="material-icons ">schedule</i> 10 mins ago</span>
-              </p>
-            </a>
-            <a href="#!" class="collection-item">
-              <h6>John D. Doe <strong>( Case representation )</strong></h6> 
-              <p>
-                <i class="material-icons left">phone</i> 07555555 <span class="right">
-                <i class="material-icons ">schedule</i> 10 mins ago</span>
-              </p>
-            </a>
-            <a href="#!" class="collection-item">
-              <h6>John D. Doe <strong>( Case representation )</strong></h6> 
-              <p>
-                <i class="material-icons left">phone</i> 07555555 <span class="right">
-                <i class="material-icons ">schedule</i> 10 mins ago</span>
-              </p>
-            </a>
-            <a href="#!" class="collection-item">
-              <h6>John D. Doe <strong>( Case representation )</strong></h6> 
-              <p>
-                <i class="material-icons left">phone</i> 07555555 <span class="right">
-                <i class="material-icons ">schedule</i> 10 mins ago</span>
-              </p>
-            </a>
-            <a href="#!" class="collection-item">
-              <h6>John D. Doe <strong>( Case representation )</strong></h6> 
-              <p>
-                <i class="material-icons left">phone</i> 07555555 <span class="right">
-                <i class="material-icons ">schedule</i> 10 mins ago</span>
-              </p>
-            </a>
-            <a href="#!" class="collection-item">
-              <h6>John D. Doe <strong>( Case representation )</strong></h6> 
-              <p>
-                <i class="material-icons left">phone</i> 07555555 <span class="right">
-                <i class="material-icons ">schedule</i> 10 mins ago</span>
-              </p>
-            </a>
-            <a href="#!" class="collection-item">
-              <h6>John D. Doe <strong>( Case representation )</strong></h6> 
-              <p>
-                <i class="material-icons left">phone</i> 07555555 <span class="right">
-                <i class="material-icons ">schedule</i> 10 mins ago</span>
-              </p>
-            </a>
-            <a href="#!" class="collection-item">
-              <h6>John D. Doe <strong>( Case representation )</strong></h6> 
-              <p>
-                <i class="material-icons left">phone</i> 07555555 <span class="right">
-                <i class="material-icons ">schedule</i> 10 mins ago</span>
-              </p>
-            </a>
-            <a href="#!" class="collection-item">
-              <h6>John D. Doe <strong>( Case representation )</strong></h6> 
-              <p>
-                <i class="material-icons left">phone</i> 07555555 <span class="right">
-                <i class="material-icons ">schedule</i> 10 mins ago</span>
-              </p>
-            </a>
+            {% if clients %}
+              {% for client in clients %}
+                  <a href="#!" class="collection-item">
+                    <h6>{{ client.first_name }} {{ client.middle_name }} {{ client.last_name }} <strong>( {{ client.issue|lower }} )</strong></h6> 
+                    <p>
+                      <i class="material-icons left">phone</i> {{ client.phone }} <span class="right">
+                      <i class="material-icons ">schedule</i> {{ client.created_at|naturaltime }} </span>
+                    </p>
+                  </a>
+              {% endfor %}    
+            
+            {% endif %}
             
           </div>
         </div>

@@ -2,12 +2,15 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 
 from .models import ClientIssues, CaseType
+from client.models import Client
 def index(request):
 	caseTypes = CaseType.objects.all()
 	issues = ClientIssues.objects.all()
+	clients = Client.objects.all()
 	context = {
 		'caseTypes': caseTypes,
 		'issues': issues,
+		'clients': clients,
 	}
 	return render(request, 'home/home.html', context)
 

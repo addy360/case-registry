@@ -11,16 +11,19 @@
           <div class="card-panel z-depth-3">
             <h5 class="center">Client Registration Form</h5>
               <div class="row">
-                <form class="col s12">
+                <form class="col s12" action="{% url 'case' %}" method="post">
+                  {% csrf_token %}
                   <div class="row">
                     <div class="input-field col s4">
-                      <select>
+                      <select name="clients" required>
+                        {% if clients %}
                         <option value="" disabled selected>Clients</option>
-                        <option value="1">Jane Doe</option>
-                        <option value="1">John Doe</option>
-                        <option value="1">Halima Musa</option>
-                        <option value="1">Johari Yakobo</option>
-                        <option value="1">Juma Mwinuka</option>
+                        {% for client in clients %}
+                          <option value="{{client.id}}"> {{ client.first_name }} {{ client.middle_name }} {{ client.last_name }} </option>
+                        {% endfor %}
+                        {% else %}    
+                        <option value="" disabled selected>No Clients so far</option>
+                        {% endif %}
                       </select>
                       <label>Choose available client</label>
                      </div>
@@ -28,13 +31,13 @@
                     <p class="lead center">Versus</p>
                   </div>
                     <div class="input-field col s4">
-                      <input id="first_name" type="text" class="validate">
+                      <input id="first_name" type="text" name="against" class="validate">
                       <label for="first_name">Full Name</label>
                     </div>
                   </div>
                     <div class="row">
                       <div class="input-field col s12">
-                        <select>
+                        <select name="case_types" required>
                           <option value="" disabled selected>Type</option>
                           {% if caseTypes %}
                             {% for ctype in caseTypes %}
@@ -50,13 +53,13 @@
                     </div>
                     <div class="row">
                     <div class="input-field col s12">
-                      <input id="last_name" type="text" class="validate">
+                      <input id="last_name" type="text" name="judge" class="validate">
                       <label for="last_name">Magistrate / Judge</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="advocate" type="text" class="validate">
+                      <input id="advocate" type="text" name="advocate" class="validate">
                       <label for="Case">Case Advocate</label>
                     </div>
                   </div>
