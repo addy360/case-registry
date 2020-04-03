@@ -4,9 +4,9 @@ from django.contrib import messages
 from .models import ClientIssues, CaseType
 from client.models import Client
 def index(request):
-	caseTypes = CaseType.objects.all()
-	issues = ClientIssues.objects.all()
-	clients = Client.objects.all()
+	caseTypes = CaseType.objects.all().order_by('name')
+	issues = ClientIssues.objects.all().order_by('name')
+	clients = Client.objects.all().order_by('-created_at')
 	context = {
 		'caseTypes': caseTypes,
 		'issues': issues,

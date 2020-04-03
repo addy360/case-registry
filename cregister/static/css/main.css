@@ -86,3 +86,17 @@ div#list .collection {
   border: rgb(64,106,0) solid 1px;
   color: rgb(64,106,0);
 }
+
+table > tbody{
+	max-height: 200px !important;
+	overflow-y: scroll !important;
+}
+
+table > tbody > tr:hover{
+	background: rgba(25,14,0,.9) !important 
+}
+
+table > tbody .btn{
+	background: rgba(255,240,221, .85) !important;
+	color: rgba(25,14,0,.9) !important
+}

@@ -8,21 +8,34 @@
 {% load humanize %}
       <div class="row">
         <div class="col m8">
-          <h4 class="white-text center"><i class="fas fa-balance-scale-left"></i> Registered Cases</h4>
-          <div class="collection">
-            {% if clients %}
-              {% for client in clients %}
-                  <a href="#!" class="collection-item">
-                    <h6>{{ client.first_name }} {{ client.middle_name }} {{ client.last_name }} <strong>( {{ client.issue|lower }} )</strong></h6> 
-                    <p>
-                      <i class="material-icons left">phone</i> {{ client.phone }} <span class="right">
-                      <i class="material-icons ">schedule</i> {{ client.created_at|naturaltime }} </span>
-                    </p>
-                  </a>
-              {% endfor %}    
-            
-            {% endif %}
-            
+          <div class="card-panel">
+            {% if clients  %}
+              <h4 class="white-text center"><i class="fas fa-balance-scale-left"></i> Registered Cases</h4>
+              <table class="responsive-table highlight">
+                <thead>
+                  <tr>
+                      <th>Full name</th>
+                      <th>Purpose</th>
+                      <th>Phone No</th>
+                      <th>Registerd</th>
+                      <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for client in clients %}
+                    <tr>
+                    <td>{{ client.first_name }} {{ client.middle_name }} {{ client.last_name }}</td>
+                    <td><strong>{{ client.issue|lower }}</strong></td>
+                    <td>{{ client.phone }}</td>
+                    <td>{{ client.created_at|time:"TIME_FORMAT" }}</td>
+                    <td><a class="waves-effect waves-light btn btn-small">Details <i class="fas fa-angle-double-right right"></i></a></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table> 
+            {% else %}
+              <h4 class="white-text center"><i class="fas fa-balance-scale-left"></i> No clients at the moment</h4>  
+            {% endif %}            
           </div>
         </div>
         <div class="col  m4">
@@ -39,9 +52,9 @@
               <ul  class="collection with-header">
                 <li class="collection-header">
                   {% if caseTypes %}
-                    <h5> Available Case types</h5>
+                    <h5> Case categories</h5>
                     {% for ctype in caseTypes %}
-                      <li class="collection-item">{{ ctype.name }}<i class="far fa-trash-alt red-text right"></i></li>
+                      <li class="collection-item">{{ ctype.name }}</li>
                     {% endfor %}
                   {% else %}
                     <h5> No Available case category at the moment</h5>          
@@ -55,7 +68,7 @@
                   {% if issues %}
                     <h5> Issues</h5>
                     {% for issue in issues %}
-                      <li class="collection-item">{{ issue.name }}<i class="far fa-trash-alt red-text right"></i></li>
+                      <li class="collection-item">{{ issue.name }}</li>
                     {% endfor %}
                   {% else %}
                     <h5> No Available case category at the moment</h5>          
