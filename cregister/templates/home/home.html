@@ -7,7 +7,7 @@
 {% block content %}
 {% load humanize %}
       <div class="row">
-        <div class="col m8">
+        <div class="col s12 m8">
           <div class="card-panel">
             {% if clients  %}
               <h4 class="white-text center"><i class="fas fa-balance-scale-left"></i> Registered Cases</h4>
@@ -28,7 +28,7 @@
                     <td><strong>{{ client.issue|lower }}</strong></td>
                     <td>{{ client.phone }}</td>
                     <td>{{ client.created_at|time:"TIME_FORMAT" }}</td>
-                    <td><a class="waves-effect waves-light btn btn-small">Details <i class="fas fa-angle-double-right right"></i></a></td>
+                    <td><a href="{% url 'client_details' client.id %}" class="waves-effect waves-light btn btn-small">Details <i class="fas fa-angle-double-right right"></i></a></td>
                   </tr>
                   {% endfor %}
                 </tbody>
@@ -38,7 +38,7 @@
             {% endif %}            
           </div>
         </div>
-        <div class="col  m4">
+        <div class="col s12  m4">
           <div id="list-collection">
             <div class="row">
               <div class="col m6">

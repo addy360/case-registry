@@ -4,6 +4,17 @@ body{
 	position: relative;
 }
 
+.text-primary{
+	color: rgb(64,36,0) !important
+}
+.text-secondary{
+	color: rgb(241,135,0) !important
+}
+.text-light{
+	color: #ccc !important
+}
+
+
 .overlay{
 	position: absolute;
 	background-color: rgba(255,171,64,.3);
@@ -91,6 +102,10 @@ table > tbody{
 	max-height: 200px !important;
 	overflow-y: scroll !important;
 }
+table > tbody > tr{
+	background: rgb(25,14,0) !important ;
+	font-size: 12px !important
+}
 
 table > tbody > tr:hover{
 	background: rgba(25,14,0,.9) !important 
@@ -99,4 +114,9 @@ table > tbody > tr:hover{
 table > tbody .btn{
 	background: rgba(255,240,221, .85) !important;
 	color: rgba(25,14,0,.9) !important
+}
+
+#user-header{
+	border-bottom: 1px solid #fff;
+	padding-bottom: 1rem;
 }

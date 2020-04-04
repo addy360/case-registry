@@ -9,6 +9,7 @@ class Case(models.Model):
 	against = models.CharField(max_length=50)
 	judge = models.CharField(max_length=50)
 	advocate = models.CharField(max_length=50)
+	# created_at	 = models.DateTimeField(default=datetime.now)
 
 	def __str__(self):
 		return self.against

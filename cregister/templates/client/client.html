@@ -16,15 +16,15 @@
                 <form class="col s12" action="{% url 'client' %}" method="POST">
                   {% csrf_token %}
                   <div class="row">
-                    <div class="input-field col s4">
+                    <div class="input-field col s12 m4">
                       <input id="first_name" type="text" name="fname" class="validate">
                       <label >First Name</label>
                     </div>
-                    <div class="input-field col s4">
+                    <div class="input-field col s12 m4">
                       <input id="last_name" type="text" name="mname" class="validate">
                       <label >Middle Name</label>
                     </div>
-                    <div class="input-field col s4">
+                    <div class="input-field col s12 m4">
                       <input id="last_name" type="text" name="lname" class="validate">
                       <label >Last Name</label>
                     </div>
@@ -43,7 +43,7 @@
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <select name="issueId">
+                      <select required name="issueId">
                         <option value="" disabled selected>Options</option>
                          {% if issues %}
                             {% for issue in issues %}
