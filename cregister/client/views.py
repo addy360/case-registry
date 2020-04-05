@@ -30,13 +30,28 @@ def client_form(request):
 
 def client_details(request, id):
 	clientCases = Case.objects.prefetch_related('case_types').filter(clients=Client.objects.get(id=id))
-	client = Client.objects.get(id=id)
-	cases = [{'client':client}]
-	for case in clientCases:
-		name = case.case_types.values()[0]['name']
-		cases.append({'case':case,'case_types': name})
-	print(cases)
+	clientOb = Client.objects.get(id=id)
+	client = {}
+	client['full_name'] = f'{clientOb.first_name} {clientOb.middle_name} {clientOb.last_name}'
+	client['case_no'] = clientOb.case_no 
+	client['phone'] = clientOb.phone 
+	client['issue'] = clientOb.issue.name 
+	cases = [] 
 	context = {
-		'cases':cases
+		'full_name':client['full_name'],
+		'case_no':client['case_no'],
+		'phone':client['phone'],
+		'issue':client['issue'],
+		'cases':cases,
 	}
+	for case in clientCases:
+		category = case.case_types.values()[0]['name']
+		judge = case.judge
+		advocate = case.advocate
+		against = case.against
+		created_at = case.created_at
+		# print(f'{category} {judge} {advocate} {against} {created_at}')
+		cases.append([category,against,judge,advocate,created_at])
+
+
 	return render(request, 'client/client-details.html', context)
